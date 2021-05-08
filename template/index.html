@@ -1,0 +1,80 @@
+<html>
+<head>
+<style>
+h1{text-align: center;
+   font-size: 40px;}
+label{text-align: center;
+      font-size: 25px;}
+div{text-align: center;}
+button{font-size: 30px;
+        background-color: #4CAF50;}
+</style>
+<meta charset="UTF-8">
+  <title> Stroke Predictor</title
+</head>
+<body>
+<h1>Stroke Prediction</h1>
+<div>
+  <form action="{{url_for('predict')}}" method="post">
+     <label for="age">Age</label>
+     <input type="text" name="age" placeholder="age" required="required" size="16">
+     <br>
+     <br>
+     <label for="hypertension">Hypertension</label>
+     <select id="hypertension" name="hypertension" placeholder="hypertension" required="required">
+       <option value="0">NO</option>
+       <option value="1">YES</option>
+     </select>
+     <br>
+     <br>
+     <label for="heart_disease">Heart Disease</label>
+     <select id="heart_disease" name="heart disease" placeholder="heart disease" required="required">
+       <option value="0">NO</option>
+       <option value="1">YES</option>
+     </select>
+     <br>
+     <br>
+     <label for="ever_married">Married</label>
+     <select id="ever_married" name="ever married" placeholder="ever married" required="required">
+       <option value="0">NO</option>
+       <option value="1">YES</option>
+     </select>
+     <br>
+     <br>
+     <label for="work_type">Work Type</label>
+     <select id="work_type" name="work type" placeholder="work type" required="required">
+       <option value="0">Private</option>
+       <option value="1">Self Employed</option>
+       <option value="2">Govt Job</option>
+       <option value="3">Children</option>
+       <option value="4">Not Working</option>
+     </select>
+     <br>
+     <br>
+     <label for="avg_glucose_level">Glucose Level</label>
+     <input type="text" name="avg glucose level" placeholder="glucose level" required="required">
+     <br>
+     <br>
+     <label for="bmi">BMI</label>
+     <input type="text" name="bmi" placeholder="bmi" required="required">
+     <br>
+     <br>
+     <label for="smoking_status">Smoking</label>
+     <select id="smoking_status" name="smoking status" placeholder="Smoking" required="required">
+       <option value="0">Smokes</option>
+       <option value="1">Formerly Smoked</option>
+       <option value="2">Never Smoked</option>
+       <option value="3">Don't Know</option>
+     </select>
+     <br>
+     <br>
+     <button type="Submit" class="btn btn-primary btn-block btn-large">Predict Stroke</button>
+    </form>
+     <br>
+     <br>
+     <h2>
+     {{prediction_text}}
+     </h2>
+   </div>
+  </body>
+ </html>
